@@ -34,10 +34,10 @@ func goGetEnvVar(key string) string {
 
 func main() {
 
-	/*botToken := goGetEnvVar("SLACK_BOT_TOKEN")
-	appToken := goGetEnvVar("SLACK_APP_TOKEN")*/
+	botToken := goGetEnvVar("SLACK_BOT_TOKEN")
+	appToken := goGetEnvVar("SLACK_APP_TOKEN")
 
-	bot := slacker.NewClient("xoxb-4010050576038-4010120797846-25hEc7SQzeG69op8arWRDRNC", "xapp-1-A040V8Q8GBB-4010072985622-857c741643ce25f9c8374ddb030d0c1f8cef544d17055af8967a33c7030f30b1")
+	bot := slacker.NewClient(botToken, appToken)
 
 	go printCommandEvents(bot.CommandEvents())
 
